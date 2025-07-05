@@ -1,23 +1,150 @@
-# Amazon-Prime-EDA-Project
+# 🎬 Amazon Prime EDA Project
 
-Amazon Prime is a paid subscription service of Amazon which is available in many countries and gives users access to additional services otherwise unavailable or available at a premium to other Amazon customers.
+The **Amazon Prime EDA Project** is a comprehensive **Exploratory Data Analysis (EDA)** conducted on the content available on Amazon Prime Video. This project dives deep into the platform's catalog to uncover patterns in content type, genres, ratings, countries of origin, and cast/crew distribution to support strategic decisions for content planning, curation, and marketing.
 
-This project involved an extensive Exploratory Data Analysis (EDA) of the Amazon Prime Video content dataset, aiming to uncover key insights into content trends, genre distributions, ratings, and country contributions. The primary objective was to support strategic decision-making for content planning and marketing on the platform.
+---
 
-The analysis began with a thorough understanding of the dataset, which comprised two main files: titles.csv (containing metadata about movies and TV shows) and credits.csv (detailing cast and crew information). Initial data inspection revealed that the titles dataset had 9871 rows and 15 columns, with significant missing values in seasons, age_certification, and tmdb_score. The credits dataset, with 124235 rows and 5 columns, primarily had missing values in the character column.
+## 📌 Project Objective
 
-Data wrangling was a crucial step, involving several key manipulations to ensure data quality and prepare for analysis. Duplicate records were removed from both datasets. Subsequently, df_titles and df_credits were merged on a common 'id' column, creating a unified dataset for comprehensive analysis. Numerical columns such as imdb_score, imdb_votes, tmdb_score, and tmdb_popularity were converted to appropriate numeric types, while type (Movie/Show) and age_certification were converted to categorical types for efficient processing and analysis. These manipulations ensured the data was clean, correctly formatted, and ready for visualization.
+To analyze Amazon Prime's video catalog in order to:
 
-The data visualization phase involved creating various charts to understand relationships between variables and extract actionable insights:
+* Understand the content distribution across different formats, genres, and countries.
+* Identify key contributors like top-rated shows, directors, and actors.
+* Explore user perception trends through IMDb scores and TMDB popularity.
+* Provide actionable insights for content strategy and platform development.
 
-- **Content Type Distribution**: A pie chart revealed that movies significantly outnumber TV shows on Amazon Prime, indicating a heavier investment in film content.
-- **Top 10 Countries by Content Production:** A horizontal bar chart clearly showed that the United States dominates content production, followed by the United Kingdom, and then India, highlighting key content sourcing regions.
-- **Top 10 highest-Rated Shows:** A horizontal bar chart clearly showed the top 10 Shows having maximum ratings.
-- **Top Directors and Actors:** Bar charts identified frequently featured directors and actors, suggesting Amazon Prime's reliance on established talent. While this ensures reliable production, it also poses a risk of limited content variety.
-- **Popular Topics (Word Cloud):** A word cloud indicated that themes like "life," "love," and "find" are prevalent in content descriptions, reflecting common narrative focuses.
-- **Top 10 Genres:** A bar chart confirmed that Drama, Comedy, and Thriller are the most common genres, suggesting high user demand in these categories.
-- **Age Certification Distribution:** A bar chart showed that "R" is the most common age certification, followed by "PG-13" and "PG," indicating a significant portion of content targets mature audiences.
-- **IMDb Rating Distribution:** A histogram revealed that most IMDb scores fall between 5.5 and 7.5, with a peak around 6.0-6.5, suggesting that the majority of content is perceived as "average to good."
-- **Content Release Year Distribution:** A line chart illustrated a sharp surge in content releases peaking around 2019-2020, followed by a noticeable decline in recent years.
-- **Content Type over Runtime and IMDb Score:** Scatter plots indicated that movies generally have longer runtimes and a wider range of IMDb scores, while shows are typically shorter with consistently higher scores (mostly between 5.5 and 9).
-- **TMDB Popularity vs. Runtime with IMDb Score:** This bubble chart highlighted that highly popular content often includes shorter shows and medium-length movies, frequently boasting high IMDb scores.
+---
+
+## 🧾 Dataset Overview
+
+* **Source:** [Kaggle / TMDB Amazon Prime Video Dataset](#)
+* **Main Files:**
+
+  * `titles.csv`: Metadata of Movies and TV Shows (9,871 rows, 15 columns)
+  * `credits.csv`: Cast and Crew Details (124,235 rows, 5 columns)
+
+---
+
+## 🧹 Data Preprocessing & Wrangling
+
+* **Missing Values**: Handled in columns like `seasons`, `age_certification`, `tmdb_score`, and `character`.
+* **Duplicate Removal**: Eliminated duplicate entries from both datasets.
+* **Data Merge**: Merged `titles.csv` and `credits.csv` on `id` to form a unified dataset.
+* **Data Type Conversion**:
+
+  * Converted `imdb_score`, `imdb_votes`, `tmdb_score`, and `tmdb_popularity` to numeric types.
+  * Converted `type`, `age_certification` to categorical types for analysis.
+
+---
+
+## 📊 Visual Explorations & Insights
+
+### 1. **Content Type Distribution**
+
+* 🥧 Movies far outnumber TV Shows on the platform.
+* 💡 Indicates Amazon's heavier investment in film-based content.
+
+### 2. **Top 10 Countries by Content Production**
+
+* 🌎 USA dominates, followed by the UK and India.
+* 💡 Highlights regional focus areas in content sourcing.
+
+### 3. **Top 10 Highest-Rated Shows**
+
+* ⭐ Horizontal bar chart showcasing the best-performing shows based on ratings.
+* 💡 Great for identifying benchmark content.
+
+### 4. **Top Directors & Actors**
+
+* 🎬 Charts highlight frequently featured creators.
+* 💡 Heavy reliance on select talent; may limit diversity.
+
+### 5. **Popular Topics (Word Cloud)**
+
+* ☁️ Common themes: "life", "love", "find".
+* 💡 Reflects dominant storytelling motifs.
+
+### 6. **Top 10 Genres**
+
+* 🎭 Drama, Comedy, and Thriller are leading genres.
+* 💡 Aligns with global viewer preferences.
+
+### 7. **Age Certification Distribution**
+
+* 🔞 'R', 'PG-13', and 'PG' dominate.
+* 💡 Emphasizes mature content strategy.
+
+### 8. **IMDb Rating Distribution**
+
+* 📈 Ratings mostly between 5.5 and 7.5 (peak around 6.0–6.5).
+* 💡 Suggests average to moderately high user reception.
+
+### 9. **Content Release Year Distribution**
+
+* 📅 Spike in releases from 2018–2020; dip afterward.
+* 💡 COVID-19 impact visible; useful for production forecasting.
+
+### 10. **Runtime vs IMDb Score by Type**
+
+* 🎥 Movies are longer with a wide rating range.
+* 📺 Shows are shorter and maintain relatively high scores.
+
+### 11. **TMDB Popularity vs Runtime vs IMDb Score (Bubble Chart)**
+
+* 🔵 Popular content often includes shorter shows or medium-length movies with high IMDb ratings.
+
+---
+
+## 🛠️ Tools & Technologies Used
+
+* **Python**
+* **Pandas, NumPy**
+* **Matplotlib, Seaborn, WordCloud**
+* **Jupyter Notebook**
+
+---
+
+## 📁 Project Structure
+
+```
+Amazon-Prime-EDA-Project/
+│
+├── data/
+│   ├── titles.csv
+│   └── credits.csv
+│
+├── notebooks/
+│   └── Amazon_Prime_EDA.ipynb
+│
+├── images/
+│   └── [Graphs and Visualizations]
+│
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## 🧠 Key Takeaways
+
+* Amazon Prime has a strong focus on movie content.
+* Genre trends suggest Drama and Comedy remain safe bets.
+* Top-rated and highly popular shows are often shorter in duration.
+* Content release trends are heavily affected by global events (e.g., COVID-19).
+* The majority of content is catered toward mature audiences.
+
+---
+
+## 📬 Contact
+
+**Isha Chaudhary**
+
+📧 [ishadvay3928@gmail.com]
+
+🔗 [LinkedIn](https://www.linkedin.com/in/ishachaudhary18/)
+
+📍 Noida, India
+
+
+
+
