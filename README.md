@@ -17,7 +17,6 @@ To analyze Amazon Prime's video catalog in order to:
 
 ## 🧾 Dataset Overview
 
-* **Source:** [Kaggle / TMDB Amazon Prime Video Dataset](#)
 * **Main Files:**
 
   * `titles.csv`: Metadata of Movies and TV Shows (9,871 rows, 15 columns)
